@@ -101,8 +101,12 @@ class GUI:
         self.line = Label(self.Window, width=450, bg="#ABB2B9")
         self.line.place(relwidth=1, rely=0.07, relheight=0.012)
         
-        #파일 전송 버튼 생성
+        #파일전송 이미지
+        img = PhotoImage(file="D:/messenger/mainFolder/icon.png")
         
+        #파일 전송 버튼 생성
+        #subsample 함수는 이미지를 x배, y배 축소하는 함수
+        self.filetfImage = img.subsample(int(img.width() / 30), int(img.height() / 30))     
         self.filetfButton = Button(self.labelHead, text="파일전송",
                                    font="Helvetica 10 bold",
                                     width=5,
