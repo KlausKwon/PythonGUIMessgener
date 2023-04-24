@@ -101,9 +101,19 @@ class GUI:
         self.line = Label(self.Window, width=450, bg="#ABB2B9")
         self.line.place(relwidth=1, rely=0.07, relheight=0.012)
         
+        #파일 전송 버튼 생성
+        
+        self.filetfButton = Button(self.labelHead, text="파일전송",
+                                   font="Helvetica 10 bold",
+                                    width=5,
+                                    bg="#ABB2B9")
+        self.filetfButton.place(relx = 0.012, rely = 0.12, relheight = 1, 
+                               relwidth = 0.15)
+        
         self.textCons = Text(self.Window, width=20, height=2, 
                              bg="#17202A", fg="#EAECEE",
                              font="Helvetica 14", padx=5, pady=5)
+        
         
         self.textCons.place(relheight=0.745, relwidth=1, rely=0.08)
         
