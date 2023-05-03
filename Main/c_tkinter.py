@@ -106,11 +106,14 @@ class GUI:
         
         #파일 전송 버튼 생성
         #subsample 함수는 이미지를 x배, y배 축소하는 함수
-        self.filetfImage = img.subsample(int(img.width() / 30), int(img.height() / 30))     
-        self.filetfButton = Button(self.labelHead, text="파일전송",
-                                   font="Helvetica 10 bold",
-                                    width=5,
-                                    bg="#ABB2B9")
+        self.filetfImage = img.subsample(int(img.width() / 30), int(img.height() / 30))
+        self.filetfButton = Button(self.labelHead, image=self.filetfImage,
+                                    relief = "flat",
+                                    width=1,
+                                    height=1,
+                                    bd = 0.7,
+                                    bg="#17202A",
+                                    fg="#17202A")
         self.filetfButton.place(relx = 0.012, rely = 0.12, relheight = 1, 
                                relwidth = 0.15)
         
