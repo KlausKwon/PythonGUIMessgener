@@ -72,6 +72,7 @@ class Client:
         self.msg_label.pack(padx=20,pady=5)
 
         self.input_area=tk.Text(self.win, height=3, bg="powder blue")
+        self.input_area.bind('<Return>', self.send)
         self.input_area.pack(padx=20,pady=5)
 
         self.send_button=tk.Button(self.win, text="Send", bg="PaleTurquoise1", command=self.send)
@@ -130,7 +131,7 @@ class Client:
                 break
     
     # function to send message
-    def send(self):
+    def send(self, event=None):
         # get the message from input area
         msg=f"{self.input_area.get('1.0', 'end').strip()}\n"
         if len(msg)==1:
