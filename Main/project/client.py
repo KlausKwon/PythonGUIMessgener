@@ -20,7 +20,7 @@ class Client:
         # encoding format
         self.format="utf-8"
         self.client_name=None
-        self.disconnect='exit'
+        #self.disconnect='exit'
 
         # client key (by diffie hellman)
         self.client_key=DiffieHellman()
@@ -57,6 +57,7 @@ class Client:
         self.win.minsize(550,490)
         self.win.title(self.name)
         self.win.configure(bg="deep sky blue")
+        #self.win.protocol("WM_DELETE_WINDOW", self.on_exit)
 
         self.chat_label=tk.Label(self.win, text="Chat Room", bg="deep sky blue")
         self.chat_label.config(font=("Arial",12))
@@ -87,9 +88,10 @@ class Client:
     # function to disconnect client
     def stop(self):
         # send server to disconnect
-        self.client.send(self.aes.encrypt(self.disconnect))
+        #self.client.send(self.aes.encrypt(self.disconnect))
         self.client.close()
-        exit(0)
+        #self.exit(1)
+        self.win.destroy()
 
     def exchangeKeys(self):
         # exchanging keys
